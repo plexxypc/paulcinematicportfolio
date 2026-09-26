@@ -234,7 +234,7 @@ export default function CursorHero() {
           </a>
           <button
             type="button"
-            className="btn btn--ghost"
+            className="btn btn--ghost btn--lets-talk"
             aria-haspopup="dialog"
             onClick={() => set_is_contact_modal_open(true)}
             onMouseEnter={magnetize}

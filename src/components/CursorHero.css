@@ -364,6 +364,10 @@ button.btn {
     gap: 18px;
     padding: 10px 20px;
   }
+  /* The floating chat button covers contact on mobile. */
+  .btn--lets-talk {
+    display: none;
+  }
 }
 
 /* Short screens (small phones, landscape): compact the copy so it fits below the nav. */
