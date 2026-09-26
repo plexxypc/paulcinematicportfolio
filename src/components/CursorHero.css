@@ -1,0 +1,364 @@
+.hero-root {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: #160a0a;
+  }
+
+.hero-canvas {
+  position: absolute;
+  inset: 0;
+  display: block;
+}
+
+/* Nav pill */
+.nav-pill {
+  position: absolute;
+  top: 28px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 28px;
+  padding: 14px 32px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 999px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  z-index: 10;
+}
+
+.nav-pill a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  opacity: 0.85;
+  transition: opacity 0.2s ease;
+}
+
+.nav-pill a:hover {
+  opacity: 1;
+}
+
+/* Hero copy, bottom-left */
+.hero-copy {
+  position: absolute;
+  left: 48px;
+  bottom: 56px;
+  z-index: 10;
+  max-width: 380px;
+  color: #fff;
+}
+
+.hero-greeting {
+  margin: 0 0 4px;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  opacity: 0.9;
+}
+
+.hero-name {
+  margin: 0 0 16px;
+  font-family: 'Dancing Script', cursive;
+  font-size: clamp(48px, 7vw, 76px);
+  font-weight: 700;
+  line-height: 1;
+  text-shadow: 0 4px 18px rgba(0, 0, 0, 0.25);
+}
+
+.hero-bio {
+  margin: 0 0 28px;
+  max-width: 340px;
+  font-size: 14px;
+  line-height: 1.6;
+  opacity: 0.92;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 14px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: 999px;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn--solid {
+  background: #fff;
+  color: #160a0a;
+}
+
+.btn--ghost {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  color: #fff;
+  backdrop-filter: blur(10px);
+}
+
+button.btn {
+  font-family: inherit;
+  line-height: inherit;
+}
+
+/* Shared contact list */
+.contact-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.contact-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border-radius: 14px;
+  color: #fff;
+  text-decoration: none;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.contact-link:hover,
+.contact-link:focus-visible {
+  background: rgba(255, 255, 255, 0.16);
+  transform: translateX(3px);
+  outline: none;
+}
+
+.contact-link__icon {
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.contact-link__text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.contact-link__label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.contact-link__handle {
+  font-size: 12px;
+  opacity: 0.75;
+}
+
+/* Floating chat button */
+.contact-fab {
+  position: fixed;
+  right: 32px;
+  bottom: 32px;
+  z-index: 20;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 14px;
+}
+
+.contact-fab__button {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.14);
+  color: #fff;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+  transition: transform 0.2s ease, background 0.2s ease;
+}
+
+.contact-fab__button:hover,
+.contact-fab--open .contact-fab__button {
+  background: rgba(255, 255, 255, 0.24);
+  transform: translateY(-2px);
+}
+
+.contact-fab__menu {
+  min-width: 220px;
+  padding: 12px;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px) scale(0.96);
+  transform-origin: bottom right;
+  transition: opacity 0.2s ease, transform 0.2s ease, visibility 0.2s;
+}
+
+.contact-fab--open .contact-fab__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+
+.contact-fab__title {
+  margin: 4px 14px 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.75;
+}
+
+/* "Let's Talk" modal */
+.contact-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: contact-fade-in 0.2s ease;
+}
+
+.contact-modal__card {
+  position: relative;
+  width: 100%;
+  max-width: 380px;
+  padding: 32px 24px 24px;
+  border-radius: 28px;
+  color: #fff;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.3);
+  animation: contact-pop-in 0.25s ease;
+}
+
+.contact-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.1);
+  color: #fff;
+  transition: background 0.2s ease;
+}
+
+.contact-modal__close:hover {
+  background: rgba(255, 255, 255, 0.22);
+}
+
+.contact-modal__title {
+  margin: 0 0 6px;
+  padding: 0 10px;
+  font-family: 'Dancing Script', cursive;
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.contact-modal__subtitle {
+  margin: 0 0 20px;
+  padding: 0 14px;
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+@keyframes contact-fade-in {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes contact-pop-in {
+  from { opacity: 0; transform: translateY(12px) scale(0.97); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+/* Custom magnetic cursor */
+.cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  margin: -4px 0 0 -4px;
+  border-radius: 50%;
+  background: #fff;
+  pointer-events: none;
+  z-index: 9999;
+  will-change: transform;
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  margin: -18px 0 0 -18px;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.7);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.35);
+  pointer-events: none;
+  z-index: 9998;
+  will-change: transform;
+  transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease, background 0.25s ease;
+}
+
+.cursor-ring--active {
+  width: 56px;
+  height: 56px;
+  margin: -28px 0 0 -28px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+@media (max-width: 640px) {
+  .hero-copy {
+    left: 24px;
+    right: 24px;
+    bottom: 32px;
+    max-width: none;
+  }
+  .nav-pill {
+    gap: 18px;
+    padding: 10px 20px;
+  }
+}

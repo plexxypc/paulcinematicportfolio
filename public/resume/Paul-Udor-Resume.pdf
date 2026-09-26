@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en" data-theme="dark">
+  <head>
+    <script type="module">import { injectIntoGlobalHook } from "/@react-refresh";
+injectIntoGlobalHook(window);
+window.$RefreshReg$ = () => {};
+window.$RefreshSig$ = () => (type) => type;</script>
+
+    <script type="module" src="/@vite/client"></script>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="dark light" />
+    <title>Paul Udor — Marketing Specialist, Automation Engineer &amp; Web Developer</title>
+    <meta name="description" content="Paul Udor is a multidisciplinary digital professional, strategist, and builder with experience spanning digital marketing, SEO, content, web development, and emerging technology." />
+    <meta property="og:title" content="Paul Udor — Marketing Specialist, Automation Engineer &amp; Web Developer" />
+    <meta property="og:description" content="Paul Udor is a multidisciplinary digital professional, strategist, and builder with experience spanning digital marketing, SEO, content, web development, and emerging technology." />
+    <meta property="og:type" content="website" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <script>
+      // Runs before first paint so there is no flash of the wrong theme.
+      // Must stay in sync with THEME_STORAGE_KEY in src/theme/theme_context.js.
+      (function apply_initial_theme() {
+        var root_element = document.documentElement;
+        try {
+          var stored_theme = window.localStorage.getItem("theme");
+          if (stored_theme === "light" || stored_theme === "dark") {
+            root_element.dataset.theme = stored_theme;
+            return;
+          }
+          var prefers_light = window.matchMedia("(prefers-color-scheme: light)").matches;
+          root_element.dataset.theme = prefers_light ? "light" : "dark";
+        } catch (error) {
+          root_element.dataset.theme = "dark";
+        }
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <noscript>
+      <p style="padding: 24px; font-family: sans-serif">
+        This site needs JavaScript to render. You can reach Paul Udor at
+        <a href="mailto:paul.udor@gmail.com">paul.udor@gmail.com</a>.
+      </p>
+    </noscript>
+    <script type="module" src="/src/main.jsx?t=1790340083792"></script>
+  </body>
+</html>
