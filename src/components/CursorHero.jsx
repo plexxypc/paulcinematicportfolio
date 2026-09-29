@@ -208,6 +208,7 @@ export default function CursorHero() {
       <nav className="nav-pill" onMouseEnter={magnetize} onMouseLeave={demagnetize}>
         <a href="https://paul-udor.vercel.app/#work" target="_blank" rel="noreferrer">Work</a>
         <a href="https://paul-udor.vercel.app/about" target="_blank" rel="noreferrer">About</a>
+        <a href="https://paul-udor.vercel.app/blog" target="_blank" rel="noreferrer">Blog</a>
         <a href="https://paul-udor.vercel.app/#contact" target="_blank" rel="noreferrer">Contact</a>
       </nav>
 
